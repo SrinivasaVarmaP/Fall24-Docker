@@ -20,7 +20,7 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
 
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag ${{ secrets.DOCKER_USERNAME }}/simple-python-app:$(date +%s)
+      run: docker build . --file Dockerfile --tag ${{ secrets.DOCKER_USERNAME }}/simple-docker-hub:$(date +%s)
 
     - name: Push the Docker image
       run: docker push ${{ secrets.DOCKER_USERNAME }}/simple-docker-hub:$(date +%s)
